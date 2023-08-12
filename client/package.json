@@ -1,5 +1,6 @@
 {
   "name": "client",
+  "type": "module",
   "proxy": "http://localhost:4000",
   "version": "0.1.0",
   "private": true,
@@ -11,6 +12,7 @@
     "@testing-library/user-event": "^14.4.3",
     "axios": "^1.2.1",
     "bootstrap": "^5.2.3",
+    "express": "^4.17.2",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.0",
     "react-dom": "^18.2.0",
