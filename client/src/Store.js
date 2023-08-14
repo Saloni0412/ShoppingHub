@@ -4,6 +4,12 @@ export const Store = createContext();
 
 const initialState = {
   cart: {
+    shippingAddress: localStorage.getItem('shippingAddress')
+      ? JSON.parse(localStorage.getItem('shippingAddress'))
+      : [],
+    paymentMethod: localStorage.getItem('paymentMethod')
+      ? localStorage.getItem('paymentMethod')
+      : "",
     cartItems: localStorage.getItem('cartItems')
       ? JSON.parse(localStorage.getItem('cartItems'))
       : [],
@@ -31,8 +37,12 @@ function reducer(state, action) {
      );
      localStorage.setItem('cartItems',JSON.stringify(cartItems));
      return {...state, cart: {...state.cart, cartItems}};
-    }
-
+    };
+    case 'SAVE_PAYMENT-METHOD':
+      return {
+        ...state,
+        cart: { ...state.cart, paymentMethod: action.payload },
+      };
     default:
       return state;
   }
