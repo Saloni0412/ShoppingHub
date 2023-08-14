@@ -22,7 +22,7 @@ function App() {
           </navbar>
         </header>
         <main>
-          <Container>
+          <Container className="mt-3">
             <Routes>
               <Route path="/product/:slug" element={<ProductScreen />} />
               <Route path="/signin" element={<SigninScreen />} />
