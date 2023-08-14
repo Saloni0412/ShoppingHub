@@ -4,21 +4,36 @@ import ProductScreen from './screens/ProductScreen';
 import ShippingAddressScreen from './screens/ShippingAddressScreen';
 import SigninScreen from './screens/SigninScreen';
 
+import Navbar from 'react-bootstrap/Navbar'
+import Container from 'react-bootstrap/Container';
+import { LinkContainer } from 'react-router-bootstrap';
+
 function App() {
   return (
     <BrowserRouter>
-      <div>
+      <div className="d-flex flex-column site-container">
         <header>
-          <Link to="/">ShoppingHub</Link>
+          <navbar bg="dark" variant="dark">
+             <Container>
+              <LinkContainer to="/">
+                <Navbar.Brand>ShoppingHub</Navbar.Brand>
+              </LinkContainer>
+             </Container>
+          </navbar>
         </header>
         <main>
-          <Routes>
-            <Route path="/product/:slug" element={<ProductScreen />} />
-            <Route path="/signin" element={<SigninScreen />} />
-            <Route path="/shipping" element={<ShippingAddressScreen />} />
-            <Route path="/" element={<HomeScreen />} />
-          </Routes>
+          <Container>
+            <Routes>
+              <Route path="/product/:slug" element={<ProductScreen />} />
+              <Route path="/signin" element={<SigninScreen />} />
+              <Route path="/shipping" element={<ShippingAddressScreen />} />
+              <Route path="/" element={<HomeScreen />} />
+            </Routes>
+          </Container>
         </main>
+        <footer>
+          <div className="text-center">All rights reserverd</div>
+        </footer>
       </div>
     </BrowserRouter>
   );
