@@ -1,4 +1,25 @@
 const data = {
+  users:[
+    {
+        name: 'Francisco',
+        email: 'francisco@exapmple.com',
+        password: bcrypt.hashSync('123456'),
+        isAdmin: true,
+    },
+    {
+        name: 'Saloni',
+        email: 'Saloni@exapmple.com',
+        password: bcrypt.hashSync('123456'),
+        isAdmin: false,
+    },
+    {
+        name: 'Dalear',
+        email: 'Dalear@exapmple.com',
+        password: bcrypt.hashSync('123456'),
+        isAdmin: false,
+    },
+
+  ],
   products: [
     {
       _id: "1",
