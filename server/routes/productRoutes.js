@@ -12,7 +12,6 @@ productRouter.get("/", async (req, res) => {
 
 // We have a find by slug and ID because slug is more user friendly, its easier to read.
 // ID is more efficient for the database to find
-
 productRouter.get("/slug/:slug", async (req, res) => {
   // find one product
   const product = await Product.findOne({ slug: req.params.slug });
