@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 import seedRouter from "./routes/seedRoutes.js";
 import productRouter from "./routes/productRoutes.js";
 import userRouter from './routes/userRoutes.js';
+import orderRouter from './routes/orderRoutes.js';
 
 dotenv.config();
 
@@ -22,12 +23,14 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Tihs route will seed the database with the data
+// This route will seed the database with the data
 app.use("/api/seed", seedRouter);
 // This route will return all the products
 app.use("/api/products", productRouter);
 // This route will return the user info
 app.use("/api/users", userRouter);
+//This route will return the order info
+app.use('/api/orders', orderRouter);
 
 const __dirname = path.resolve();
 app.use(express.static(path.join(__dirname, '/client/build')));
