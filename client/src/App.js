@@ -16,6 +16,7 @@ import ShippingAddressScreen from './screens/ShippingAddressScreen';
 import PaymentMethodScreen from './screens/PaymentMethodScreen';
 import PlaceOrderScreen from './screens/PlaceOrderScreen';
 import OrderScreen from './screens/orderScreen';
+import ProfileScreen from './screens/ProfileScreen'
 
 function App() {
   // getting state and dispatch from Store
@@ -32,6 +33,7 @@ function App() {
     localStorage.removeItem('shippingAddress');
     // remove users payment method from local storage
     localStorage.removeItem('paymentMethod');
+    window.location.href = '/signin';
   }
 
   return (
@@ -84,6 +86,7 @@ function App() {
               <Route path="/cart" element={<CartScreen />} />
               <Route path="/signin" element={<SigninScreen />} />
               <Route path="/signup" element={<SignupScreen />} />
+              <Route path="/profile" element={<ProfileScreen />} />
               <Route path="/placeorder" element={<PlaceOrderScreen />} />
               <Route path="/order/:id" element={<OrderScreen />}></Route>
               <Route path="/shipping" element={<ShippingAddressScreen />}></Route>
