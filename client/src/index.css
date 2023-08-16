@@ -14,10 +14,12 @@ body {
 main {
   flex: 1;
 }
+
 .btn-primary {
   background-color: #f0c040;
   color: #000000;
 }
+
 .products {
   display: flex;
   flex-wrap: wrap;
@@ -32,19 +34,34 @@ main {
   border: 1px rgb(39, 39, 39) solid;
   margin: 1rem;
 }
+
 .product img {
   width: 100%;
   max-width: 400px;
 }
+
 .product-info {
   padding: 1rem;
 }
+
 .img-large {
   max-width: 100%;
 }
+
 .img-thumbnail {
   height: 80px;
 }
+
 .small-container {
   max-width: 600px;
+}
+
+.checkout-steps > div {
+  border-bottom: 0.2rem solid #a0a0a0;
+  color: #a0a0a0;
+}
+
+.checkout-steps > div.active {
+  border-bottom: 0.2rem solid #f08000;
+  color: #f08000;
 }
