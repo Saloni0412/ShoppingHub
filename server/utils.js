@@ -18,19 +18,33 @@ export const generateToken = (user) => {
   );
 };
 
+// middleware to authenticate user
 export const isAuth = (req, res, next) => {
+  // get authorization from request header
   const authorization = req.headers.authorization;
   if (authorization) {
-    const token = authorization.slice(7, authorization.length); // get 7 characters from beginning
+    // get 7 characters from beginning of authorization string
+    const token = authorization.slice(7, authorization.length); 
+    // decode token and get user data
     jwt.verify(token, process.env.JWT_SECRET, (err, decode) => {
       if (err) {
-        res.status(401).send({ message: 'Invalid Token' });
+        res.status(401).send({ message: "Invalid Token" });
       } else {
         req.user = decode;
         next();
       }
     });
   } else {
-    res.status(401).send({ message: 'No Token' });
+    res.status(401).send({ message: "No Token" });
+  }
+};
+
+// middleware to check if user is admin
+export const isAdmin = (req, res, next) => {
+  // if user exist and is admin, then next()
+  if (req.user && req.user.isAdmin) {
+    next();
+  } else {
+    res.status(401).send({ message: "Invalid Admin Token" });
   }
 };
