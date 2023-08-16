@@ -5,7 +5,41 @@ import { isAuth, isAdmin } from "../utils.js";
 
 const productRouter = express.Router();
 
-const PAGE_SIZE = 3;
+productRouter.get("/", async (req, res) => {
+  // find all products
+  const products = await Product.find();
+  // send back products
+  res.send(products);
+});
+
+productRouter.post(
+  "/",
+  isAuth,
+  isAdmin,
+  expressAsyncHandler(async (req, res) => {
+    // Create a new product instance with default values
+    const newProduct = new Product({
+      name: "sample name " + Date.now(),
+      slug: "sample-name-" + Date.now(),
+      image: "/images/p1.jpg",
+      price: 0,
+      category: "sample category",
+      brand: "sample brand",
+      countInStock: 0,
+      rating: 0,
+      numReviews: 0,
+      description: "sample description",
+    });
+
+    // Save the newly created product to the database
+    const product = await newProduct.save();
+
+    // Send a response indicating successful creation along with the created product details
+    res.send({ message: "Product Created", product });
+  })
+);
+
+const PAGE_SIZE = 10;
 
 // Admin product list route
 productRouter.get(
@@ -34,13 +68,6 @@ productRouter.get(
     });
   })
 );
-
-productRouter.get("/", async (req, res) => {
-  // find all products
-  const products = await Product.find();
-  // send back products
-  res.send(products);
-});
 
 // We have a find by slug and ID because slug is more user friendly, its easier to read.
 // ID is more efficient for the database to find
