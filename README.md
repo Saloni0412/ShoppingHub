@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+# ShoppingHub
+![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB) ![Nodemon](https://img.shields.io/badge/NODEMON-%23323330.svg?style=for-the-badge&logo=nodemon&logoColor=%BBDEAD) ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![Heroku](https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white) ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+"Shopping Hub" is an all-inclusive online shopping application that provides a seamless and diverse shopping experience. It offers a dynamic and interactive user interface that responds smoothly to user actions. It demonstrates the capabilities of the MERN stack combined with Mongoose, offering a feature-rich and user-friendly online shopping experience that's secure, efficient, and enjoyable for both customers and administrators.
 
-## Available Scripts
+## Table of Contents
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Questions](#questions)
 
-In the project directory, you can run:
+## Technologies Used
+ShoppingHub is built using the following technologies:
+- Javascript
+- MongoDB
+- Express.js
+- MERN stack
+- NodeJS
+- Heroku
+Feel free to explore and leverage these technologies to extend and customize the functionality of ShoppingHub.
 
-### `npm start`
+## Installation
+To install this application you will need to download NODE JS and npm packages. Once downloaded clone this repository to your local machine, run command npm install/ npm i express which will install all express dependencies. Create a ``.env`` file with the required keys 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Usage
+Once the app is running in nodeJS,
+- run ``npm run build`` and it will compile the files and will open ``http://localhost:3000/`` in any browser, and you will have ShoppingHub.
+- You can click on the product to see details
+- To checkout the items, you will have to ``sign up/login``.
+- Once you login you can add items to cart using ``add to cart`` button
+- You can also remove item from the cart using ``bin icon`` and it will be removed from the cart.
+- Please feel free to use the app - <a href="https://peaceful-coast-10837-e5ffde853d9b.herokuapp.com/" target="_blank">Link to the app</a>
+<br>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The screenshot for the project is mentioned below.
+![Alt Text](./client/public/images/screenshot1.png)
+<br>
 
-### `npm test`
+Product detail page
+![Alt Text](./client/public/images/screenshot2.png)
+<br>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+cart page
+![Alt Text](./client/public/images/screenshot3.png)
+<br>
 
-### `npm run build`
+admin view
+![Alt Text](./client/public/images/screenshot4.png)
+<br>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+signin page
+![Alt Text](./client/public/images/screenshot5.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Credits
+- <a href="https://github.com/Hiroro1989" target="_blank">Hiroro</a>
+- <a href="https://github.com/Saloni0412" target="_blank">Saloni Patel</a>
+- <a href="https://github.com/PacoCasillas" target="_blank">Francisco Olivares Casillas</a>
+- <a href="https://github.com/matthewzmija" target="_blank">Matthew</a>
+- <a href="https://github.com/AngadBatth" target="_blank">Angad Bath</a>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## License
+MIT license
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Questions
+If you have any questions about the repo, please contact us through github.
