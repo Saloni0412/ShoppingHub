@@ -1,101 +1,66 @@
-# ShoppingHub - Your Ultimate E-Commerce Destination
+# ShoppingHub
+![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB) ![Nodemon](https://img.shields.io/badge/NODEMON-%23323330.svg?style=for-the-badge&logo=nodemon&logoColor=%BBDEAD) ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![Heroku](https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white) ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 
-Welcome to ShoppingHub, the ultimate online shopping platform where you can discover, explore, and shop for a diverse range of products. From fashion and electronics to home essentials, ShoppingHub has got you covered.
+"Shopping Hub" is an all-inclusive online shopping application that provides a seamless and diverse shopping experience. It offers a dynamic and interactive user interface that responds smoothly to user actions. It demonstrates the capabilities of the MERN stack combined with Mongoose, offering a feature-rich and user-friendly online shopping experience that's secure, efficient, and enjoyable for both customers and administrators.
 
 ## Table of Contents
-
-- [Project Overview](#project-overview)
-- [Features](#features)
 - [Technologies Used](#technologies-used)
-- [Credits](#credits)
-- [Deployment](#deployment)
-
-## Project Overview
-
-ShoppingHub is a comprehensive e-commerce website that offers a user-friendly experience for shoppers. With an extensive catalog, secure payment processing, and user profiles, ShoppingHub aims to be your go-to destination for online shopping.
-
-## Features
-
-- User registration and authentication.
-- Product details pages with images, descriptions, and reviews.
-- Shopping cart functionality with quantity adjustment.
-- Secure checkout process and payment handling.
-- User profile management and order history.
-- Admin dashboard for managing products and orders.
-- Responsive design for mobile and desktop devices.
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Questions](#questions)
 
 ## Technologies Used
+ShoppingHub is built using the following technologies:
+- Javascript
+- MongoDB
+- Express.js
+- MERN stack
+- NodeJS
+- Heroku
+Feel free to explore and leverage these technologies to extend and customize the functionality of ShoppingHub.
 
-This project utilizes a variety of technologies to deliver a dynamic and feature-rich e-commerce experience:
+## Installation
+To install this application you will need to download NODE JS and npm packages. Once downloaded clone this repository to your local machine, run command npm install/ npm i express which will install all express dependencies. Create a ``.env`` file with the required keys 
 
-- **Frontend**:
-  - React: JavaScript library for building user interfaces.
-  - React Router: Handling navigation and routing within the app.
-  - React Bootstrap: UI components and styling for a responsive design.
-  - Axios: Making HTTP requests to the backend API.
-  - PayPal React Integration: Secure payment processing using PayPal.
-  - React Helmet Async: Managing the document head for SEO optimization.
+## Usage
+Once the app is running in nodeJS,
+- run ``npm run build`` and it will compile the files and will open ``http://localhost:3000/`` in any browser, and you will have ShoppingHub.
+- You can click on the product to see details
+- To checkout the items, you will have to ``sign up/login``.
+- Once you login you can add items to cart using ``add to cart`` button
+- You can also remove item from the cart using ``bin icon`` and it will be removed from the cart.
+- Please feel free to use the app - <a href="https://peaceful-coast-10837-e5ffde853d9b.herokuapp.com/" target="_blank">Link to the app</a>
+<br>
 
-- **Backend**:
-  - Node.js: JavaScript runtime for building server-side applications.
-  - Express.js: Web application framework for Node.js.
-  - MongoDB: NoSQL database for storing product, user, and order data.
-  - Mongoose: Object Data Modeling (ODM) library for MongoDB.
-  - JWT (JSON Web Tokens): Securely transmitting authentication data.
-  - Bcrypt: Hashing and salting passwords for secure storage.
+The screenshot for the project is mentioned below.
+![Alt Text](./client/public/images/screenshot1.png)
+<br>
 
-- **Deployment**:
-  - Heroku: Cloud platform for deploying the backend server.
-  - MongoDB Atlas: Cloud database service for hosting the MongoDB database.
+Product detail page
+![Alt Text](./client/public/images/screenshot2.png)
+<br>
 
-This project brings together these technologies to create a seamless and engaging online shopping experience.
+cart page
+![Alt Text](./client/public/images/screenshot3.png)
+<br>
 
+admin view
+![Alt Text](./client/public/images/screenshot4.png)
+<br>
 
-## Getting Started
-
-### Heroku Deployment
-
-Access the application in Heroku: [ShoppingHub](https://peaceful-coast-10837-e5ffde853d9b.herokuapp.com/)
-
-### Local Installation
-
-To run the project locally, follow these steps:
-
-1. Clone the repository:
-   ```
-   git clone https://github.com/your-username/shoppinghub.git
-   ```
-2. Install dependencies:
-   ```
-   cd shoppinghub
-   cd server
-   npm install
-   cd ../client
-   npm install
-   ```
-3. Create a .env file in the server directory and set your environment variables.
-
-4. Srart the server and client
-    ```
-    cd server
-    npm start
-    cd ../client
-    npm start
-    ```
+signin page
+![Alt Text](./client/public/images/screenshot5.png)
 
 ## Credits
+- <a href="https://github.com/Hiroro1989" target="_blank">Hiroro</a>
+- <a href="https://github.com/Saloni0412" target="_blank">Saloni Patel</a>
+- <a href="https://github.com/PacoCasillas" target="_blank">Francisco Olivares Casillas</a>
+- <a href="https://github.com/matthewzmija" target="_blank">Matthew</a>
+- <a href="https://github.com/AngadBatth" target="_blank">Angad Bath</a>
 
-- [@AngadBatth](https://github.com/AngadBatth) 
-- [@Hiroro1989](https://github.com/Hiroro1989)
-- [@matthewzmija](https://github.com/matthewzmija)
-- [@PacoCasillas](https://github.com/PacoCasillas)
-- [@Saloni0412](https://github.com/Saloni0412)
+## License
+MIT license
 
-## Deployment
-
-[https://peaceful-coast-10837-e5ffde853d9b.herokuapp.com/](https://peaceful-coast-10837-e5ffde853d9b.herokuapp.com/)
-
-![screenShot](./asset/1.png)
-![screenShot](./asset/2.png)
-
-   
+## Questions
+If you have any questions about the repo, please contact us through github.
