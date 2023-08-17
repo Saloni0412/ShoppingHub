@@ -96,9 +96,9 @@ function ProductScreen() {
                 numReviews={product.numReviews}
               ></Rating>
             </ListGroup.Item>
-            <ListGroup.Item>Pirce : ${product.price}</ListGroup.Item>
+            <ListGroup.Item>Price: ${product.price}</ListGroup.Item>
             <ListGroup.Item>
-              Description:
+              Description: 
               <p>{product.description}</p>
             </ListGroup.Item>
           </ListGroup>
@@ -109,13 +109,13 @@ function ProductScreen() {
               <ListGroup variant="flush">
                 <ListGroup.Item>
                   <Row>
-                    <Col>Price:</Col>
+                    <Col>Price: </Col>
                     <Col>${product.price}</Col>
                   </Row>
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <Row>
-                    <Col>Status:</Col>
+                    <Col>Status: </Col>
                     <Col>
                       {product.countInStock > 0 ? (
                         <Badge bg="success">In Stock</Badge>

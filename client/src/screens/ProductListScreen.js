@@ -11,8 +11,10 @@ import MessageBox from "../components/MessageBox";
 // Reducer function for managing state updates
 const reducer = (state, action) => {
   switch (action.type) {
+
     case "FETCH_REQUEST":
       return { ...state, loading: true };
+
     case "FETCH_SUCCESS":
       return {
         ...state,
@@ -21,18 +23,38 @@ const reducer = (state, action) => {
         pages: action.payload.pages,
         loading: false,
       };
+
     case "FETCH_FAIL":
       return { ...state, loading: false, error: action.payload };
 
     case "CREATE_REQUEST":
       return { ...state, loadingCreate: true };
+
     case "CREATE_SUCCESS":
       return {
         ...state,
         loadingCreate: false,
       };
+
     case "CREATE_FAIL":
       return { ...state, loadingCreate: false };
+
+    case 'DELETE_REQUEST':
+      return { ...state, loadingDelete: true, successDelete: false };
+
+    case 'DELETE_SUCCESS':
+      return {
+        ...state,
+        loadingDelete: false,
+        successDelete: true,
+      };
+
+    case 'DELETE_FAIL':
+      return { ...state, loadingDelete: false, successDelete: false };
+
+    case 'DELETE_RESET':
+      return { ...state, loadingDelete: false, successDelete: false };
+
     default:
       return state;
   }
@@ -40,11 +62,11 @@ const reducer = (state, action) => {
 
 export default function ProductListScreen() {
   // State management using useReducer
-  const [{ loading, error, products, pages, loadingCreate }, dispatch] =
-    useReducer(reducer, {
-      loading: true,
-      error: "",
-    });
+  const [{ loading, error, products, pages, loadingCreate, loadingDelete, successDelete }, dispatch,] = 
+  useReducer(reducer, {
+    loading: true,
+    error: '',
+  });
 
   const navigate = useNavigate();
   const { search } = useLocation();
@@ -67,8 +89,11 @@ export default function ProductListScreen() {
         dispatch({ type: "FETCH_FAIL", payload: err.message });
       }
     };
-    fetchData();
-  }, [page, userInfo]);
+
+    if (successDelete) {dispatch({ type: 'DELETE_RESET' });} 
+    else {fetchData();}
+
+  }, [page, userInfo, successDelete]);
 
   // Handler for creating a new product
   const createHandler = async () => {
@@ -92,6 +117,22 @@ export default function ProductListScreen() {
     }
   };
 
+  // delete handler for products
+  const deleteHandler = async (product) => {
+    if (window.confirm("Confirm deletion of product?")) {
+      try {
+        await axios.delete(`/api/products/${product._id}`, {
+          headers: { Authorization: `Bearer ${userInfo.token}` },
+        });
+       alert("product successfully deleted!");
+        dispatch({ type: 'DELETE_SUCCESS' });
+      } catch (err) {
+        alert("error deleting product");
+        dispatch({ type: 'DELETE_FAIL' });
+      }
+    }
+  };
+
   return (
     <div>
       <Row>
@@ -108,6 +149,7 @@ export default function ProductListScreen() {
       </Row>
 
       {loadingCreate && <LoadingBox></LoadingBox>}
+      {loadingDelete && <LoadingBox></LoadingBox>}
 
       {loading ? (
         <LoadingBox />
@@ -134,15 +176,21 @@ export default function ProductListScreen() {
                   <td>{product.price}</td>
                   <td>{product.category}</td>
                   <td>{product.brand}</td>
+
                   <td>
                     <Button
                       type="button"
                       variant="light"
                       onClick={() => navigate(`/admin/product/${product._id}`)}
-                    >
-                      Edit
-                    </Button>
+                    > Edit </Button>
+
+                    <Button
+                      type="button"
+                      variant="light"
+                      onClick={() => deleteHandler(product)}
+                    > Delete </Button>
                   </td>
+
                 </tr>
               ))}
             </tbody>

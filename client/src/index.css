@@ -13,6 +13,7 @@ body {
 
 main {
   flex: 1;
+  background-color: #dcedffff;
 }
 
 .btn-primary {
@@ -27,7 +28,7 @@ main {
 }
 
 .rating span {
-  color: #ffc000;
+  color: #c8249c;
 }
 
 .product {
@@ -57,11 +58,20 @@ main {
 }
 
 .checkout-steps > div {
-  border-bottom: 0.2rem solid #a0a0a0;
-  color: #a0a0a0;
+  border-bottom: 0.2rem solid #454545;
+  color: #454545;
 }
 
 .checkout-steps > div.active {
-  border-bottom: 0.2rem solid #f08000;
-  color: #f08000;
+  border-bottom: 0.2rem solid #861969;
+  color: #861969;
+}
+
+.card-img-top {
+  width: 350px;
+  height: 400px;
+}
+
+.alert-info {
+  background-color: #c8249c;
 }
