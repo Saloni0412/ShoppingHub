@@ -39,6 +39,7 @@ productRouter.post(
   })
 );
 
+// product add route
 productRouter.put(
   "/:id",
   isAuth,
@@ -56,11 +57,23 @@ productRouter.put(
       product.countInStock = req.body.countInStock;
       product.description = req.body.description;
       await product.save();
-      res.send({ message: "Product Updated" });
-    } else {
-      res.status(404).send({ message: "Product Not Found" });
-    }
-  })
+      res.send({ message: "Product Updated Successfully" });
+    } 
+    else {res.status(404).send({ message: "Product Not Found" });}})
+);
+
+// product delete route
+productRouter.delete(
+  '/:id',
+  isAuth,
+  isAdmin,
+  expressAsyncHandler(async (req, res) => {
+    const product = await Product.findById(req.params.id);
+    if (product) {
+      await product.remove();
+      res.send({ message: "Product Deleted Successfully" });
+    } 
+    else {res.status(404).send({ message: "Product Not Found" });}})
 );
 
 const PAGE_SIZE = 10;
