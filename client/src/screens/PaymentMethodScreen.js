@@ -47,13 +47,23 @@ export default function PaymentMethodScreen() {
 
         <Form onSubmit={submitHandler}>
 
+         <div className="mb-3">
+            <Form.Check
+              type="radio"
+              id="American Express"
+              label="American Express"
+              value="American Express"
+              checked={paymentMethodName === 'American Express'}
+              onChange={(e) => setPaymentMethod(e.target.value)}/>
+          </div>
+
           <div className="mb-3">
             <Form.Check
               type="radio"
-              id="PayPal"
-              label="PayPal"
-              value="PayPal"
-              checked={paymentMethodName === 'PayPal'}
+              id="Bitcoin"
+              label="Bitcoin"
+              value="Bitcoin"
+              checked={paymentMethodName === 'Bitcoin'}
               onChange={(e) => setPaymentMethod(e.target.value)}/>
           </div>
 
@@ -64,6 +74,26 @@ export default function PaymentMethodScreen() {
               label="Stripe"
               value="Stripe"
               checked={paymentMethodName === 'Stripe'}
+              onChange={(e) => setPaymentMethod(e.target.value)}/>
+          </div>
+
+          <div className="mb-3">
+            <Form.Check
+              type="radio"
+              id="Visa"
+              label="Visa"
+              value="Visa"
+              checked={paymentMethodName === 'Visa'}
+              onChange={(e) => setPaymentMethod(e.target.value)}/>
+          </div>
+
+          <div className="mb-3">
+            <Form.Check
+              type="radio"
+              id="Mastercard"
+              label="Mastercard"
+              value="Mastercard"
+              checked={paymentMethodName === 'Mastercard'}
               onChange={(e) => setPaymentMethod(e.target.value)}/>
           </div>
 
