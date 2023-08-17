@@ -63,8 +63,8 @@ main {
 }
 
 .checkout-steps > div.active {
-  border-bottom: 0.2rem solid #C8249C;
-  color: #C8249C;
+  border-bottom: 0.2rem solid #861969;
+  color: #861969;
 }
 
 .card-img-top {
