@@ -75,3 +75,14 @@ main {
 .alert-info {
   background-color: #c8249c;
 }
+
+.img-large {
+  box-shadow: 4px 4px 4px rgb(10 10 10 / 20%);
+}
+
+.card {
+  box-shadow: 4px 4px 4px rgb(10 10 10 / 20%);
+}
+.list-group-item {
+  box-shadow: 4px 4px 4px rgb(10 10 10 / 20%);
+}
