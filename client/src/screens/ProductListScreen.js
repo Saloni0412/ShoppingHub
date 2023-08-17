@@ -5,10 +5,8 @@ import { Store } from "../Store";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
-import { toast } from "react-toastify";
 import LoadingBox from "../components/LoadingBox";
 import MessageBox from "../components/MessageBox";
-import { getError } from "../utils";
 
 // Reducer function for managing state updates
 const reducer = (state, action) => {
@@ -74,25 +72,23 @@ export default function ProductListScreen() {
 
   // Handler for creating a new product
   const createHandler = async () => {
-    if (window.confirm("Are you sure to create?")) {
-      try {
-        dispatch({ type: "CREATE_REQUEST" });
-        const { data } = await axios.post(
-          "/api/products",
-          {},
-          {
-            headers: { Authorization: `Bearer ${userInfo.token}` },
-          }
-        );
-        toast.success("product created successfully");
-        dispatch({ type: "CREATE_SUCCESS" });
-        navigate(`/admin/product/${data.product._id}`);
-      } catch (err) {
-        toast.error(getError(error));
-        dispatch({
-          type: "CREATE_FAIL",
-        });
-      }
+    try {
+      dispatch({ type: "CREATE_REQUEST" });
+      const { data } = await axios.post(
+        "/api/products",
+        {},
+        {
+          headers: { Authorization: `Bearer ${userInfo.token}` },
+        }
+      );
+      alert("product created successfully");
+      dispatch({ type: "CREATE_SUCCESS" });
+      navigate(`/admin/product/${data.product._id}`);
+    } catch (err) {
+      alert("error creating product");
+      dispatch({
+        type: "CREATE_FAIL",
+      });
     }
   };
 
@@ -127,6 +123,7 @@ export default function ProductListScreen() {
                 <th>PRICE</th>
                 <th>CATEGORY</th>
                 <th>BRAND</th>
+                <th>ACTIONS</th>
               </tr>
             </thead>
             <tbody>
@@ -137,6 +134,15 @@ export default function ProductListScreen() {
                   <td>{product.price}</td>
                   <td>{product.category}</td>
                   <td>{product.brand}</td>
+                  <td>
+                    <Button
+                      type="button"
+                      variant="light"
+                      onClick={() => navigate(`/admin/product/${product._id}`)}
+                    >
+                      Edit
+                    </Button>
+                  </td>
                 </tr>
               ))}
             </tbody>
